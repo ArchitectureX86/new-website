@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -13,8 +14,12 @@
                 padding: 0px;
                 margin: 0px;
             }
+            ::selection {
+                background-color: #ffffff40;
+                text-decoration: underline;
+            }
             #container {
-                background-color: black;
+                background-color: transparent;
                 height: 100vh;
                 width: 100vw;
                 padding: 0px;
@@ -22,32 +27,106 @@
                 display: flex;
                 align-items: center; /*up-down*/
                 justify-content: center; /*left-right*/
+                z-index: 0;
             }
-            #titlebar {
+            #background {
+                margin: 0px;
+                padding: 0px;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+            }
+            .titlebar {
                 background-color: black;
                 color: white;
+                border: none;
                 border-bottom: solid;
                 height: 50px;
                 width: 100%;
-                font-size: 25;
+                font-size: 25px;
                 align-content: center; /*up-down*/
                 text-align-last: center; /*left-right*/
                 position: absolute;
                 top: 0px;
                 z-index: 999;
+                margin: 0px;
+                padding: 0px;
             }
-            #gaytainer {
-                background-color: red;
-                height: 100px;
-                width: 100px;
+            .window1 {
+                background: black;
+                color: white;
+                border: double;
+                height: fit-content;
+                width: fit-content;
+                margin: 0px;
+                padding: 5px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .window1text1 {
+                color: white;
+                font-size: 30px;
+                margin: 5px;
+                padding: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                align-self: center;
+            }
+            .advertise-right {
+                background-color: #ff0000;
+                border: solid;
+                border-color: white;
+                width: 150px;
+                height: 300px;
+                padding: 0px;
+                margin: 0px;
+            }
+            .divider {
+                height: 1px;
+                width: 100%;
+                margin: 1px;
+                padding: 0px;
+                background-image: linear-gradient(90deg, transparent, white, white, transparent);
+            }
+            .tiny {
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                margin: 0px;
+                padding: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                align-self: center;
+            }
+            .advertise-right img {
+                height: 100%;
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
             }
         </style>
     </head>
     <body>
         <div id="container">
-            <div id="titlebar">F MY POOR FALD EGG BOY</div>
-            <div id="gaytainer">
-                <div id="gayone"><div id="gaytwo"></div></div>
+            <img
+                id="background"
+                src="https://cdn.jsdelivr.net/gh/goofymanreal/neocities-jeremyclarkson/jpg/windowsxp.jpg" />
+            <div class="titlebar">
+                <span id="titlebartext">F MY POOR FALD EGG BOY</span>
+            </div>
+
+            <div class="window1">
+                <span class="window1text1">This is some text, lol.</span>
+                <div class="divider"></div>
+
+                <div class="divider"></div>
+                <span class="window1text1">Balls.</span>
+                <span class="tiny">tiny text.</span>
+
+                <!--div class="advertise-right"><img src="images/Sayori!.jpg"></div-->
             </div>
         </div>
     </body>
