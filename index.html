@@ -172,6 +172,7 @@
                 /* */
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 flex-direction: column;
             }
             .advertise-right {
@@ -239,30 +240,51 @@
             <header id="header">
                 <h1>F MY POOR FALD EGG BOY</h1>
             </header>
-            <!-- Window1 -->
-            <section class="window1-stack">
-                <header class="titlebar1">
-                    <small title="Sure a title.">TITLE-BAR TITLE.</small>
-                </header>
-                <section class="window1">
-                    <!-- Window1 Content -->
-                    <section class="subcontainer1">
-                        <section class="subcontainer-row">
-                            <p>Text test 1</p>
-                            <div class="v-divider"></div>
-                            <section class="subcontainer-col">
-                                <p>This is some text, <del>lol.</del></p>
-                                <div class="h-divider"></div>
-                                <p><ins>Balls.</ins></p>
-                                <small>tiny text.</small>
-                                <!--div class="advertise-right"><img src="images/Sayori!.jpg"></div-->
+            <div class="subcontainer-col">
+                <!-- Window1 Start -->
+                <section class="window1-stack">
+                    <header class="titlebar1">
+                        <small title="Sure a title.">TITLE-BAR TITLE.</small>
+                    </header>
+                    <section class="window1">
+                        <!-- Window1 Content Start -->
+                        <section class="subcontainer1">
+                            <section class="subcontainer-row">
+                                <p>Text test 1</p>
+                                <div class="v-divider"></div>
+                                <section class="subcontainer-col">
+                                    <p>This is some text, <del>lol.</del></p>
+                                    <div class="h-divider"></div>
+                                    <p><ins>Balls.</ins></p>
+                                    <small>tiny text.</small>
+                                    <!--div class="advertise-right"><img src="images/Sayori!.jpg"></div-->
+                                </section>
                             </section>
                         </section>
+                        <!-- Window1 Content End -->
                     </section>
-                    <!-- Window1 Content -->
                 </section>
-            </section>
-            <!-- Window1 -->
+                <!-- Window1 End -->
+                <div class="h-divider"></div>
+                <!-- Window1 Start -->
+                <section class="window1-stack">
+                    <header class="titlebar1">
+                        <small title="Sure a title.">Tooltip test.</small>
+                    </header>
+                    <section class="window1">
+                        <!-- Window1 Content Start -->
+                        <section class="subcontainer1">
+                            <section class="subcontainer-row">
+                                <div class="tooltip">
+                                    <p class="tooltiptext">Hover over this.</p>
+                                </div>
+                            </section>
+                        </section>
+                        <!-- Window1 Content End -->
+                    </section>
+                </section>
+                <!-- Window1 End -->
+            </div>
         </div>
     </body>
 </html>
