@@ -8,11 +8,48 @@
         <script src="script.js"></script>
         <style>
             body {
-                background-color: white;
+                background-color: #000000;
                 height: 100vh;
                 width: 100vw;
                 padding: 0px;
                 margin: 0px;
+            }
+            h1 {
+                color: white;
+                height: auto;
+                width: auto;
+                font-weight: lighter;
+                font-size: 25px;
+                font-family: "Times New Roman";
+                align-content: center; /*up-down*/
+                text-align-last: center; /*left-right*/
+                margin: 0px;
+                padding: 0px;
+            }
+            p {
+                color: white;
+                height: auto;
+                width: auto;
+                font-weight: lighter;
+                font-size: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                align-self: center;
+                margin: 0px;
+                padding: 0px;
+            }
+            small {
+                color: white;
+                height: auto;
+                width: auto;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                margin: 0px;
+                padding: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                align-self: center;
             }
             ::selection {
                 background-color: #ffffff40;
@@ -34,45 +71,108 @@
                 padding: 0px;
                 height: 100%;
                 width: 100%;
+                object-fit: cover;
                 position: absolute;
                 z-index: -1;
             }
-            .titlebar {
+            #header {
                 background-color: black;
                 color: white;
                 border: none;
                 border-bottom: solid;
                 height: 50px;
                 width: 100%;
-                font-size: 25px;
+                margin: 0px;
+                padding: 0px;
                 align-content: center; /*up-down*/
                 text-align-last: center; /*left-right*/
                 position: absolute;
                 top: 0px;
                 z-index: 999;
+            }
+            .titlebar1 {
+                background-color: black;
+                color: white;
+                border: double;
+                border-width: thick;
+                border-top-width: medium;
+                border-bottom: none;
+                height: 0px;
+                width: auto;
                 margin: 0px;
-                padding: 0px;
+                /* */
+                padding: 10px;
+                /* */
+                display: flex;
+                align-items: center; /*up-down*/
+                justify-content: left; /*left-right*/
             }
             .window1 {
                 background: black;
                 color: white;
                 border: double;
+                border-width: thick;
+                border-top-width: medium;
+                border-bottom-width: medium;
                 height: fit-content;
                 width: fit-content;
                 margin: 0px;
-                padding: 5px;
+                padding: 10px;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
             }
-            .window1text1 {
-                color: white;
-                font-size: 30px;
-                margin: 5px;
+            .window1-stack {
+                background: transparent;
+                color: transparent;
+                border: none;
+                height: fit-content;
+                width: fit-content;
+                margin: 0px;
                 padding: 0px;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-                align-self: center;
+                /* */
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .subcontainer1 {
+                background: black;
+                color: white;
+                border: none;
+                height: fit-content;
+                width: fit-content;
+                margin: 0px;
+                padding: 0px;
+                /* */
+                display: flex;
+                align-items: center; /*up-down*/
+                justify-content: center; /*left-right*/
+            }
+            .subcontainer-row {
+                background: black;
+                color: white;
+                border: none;
+                height: fit-content;
+                width: fit-content;
+                margin: 0px;
+                padding: 0px;
+                /* */
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+            .subcontainer-col {
+                background: black;
+                color: white;
+                border: none;
+                height: fit-content;
+                width: fit-content;
+                margin: 0px;
+                padding: 0px;
+                /* */
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
             }
             .advertise-right {
                 background-color: #ff0000;
@@ -83,23 +183,45 @@
                 padding: 0px;
                 margin: 0px;
             }
-            .divider {
+            .v-divider {
+                background-color: white;
+                height: auto;
+                width: 1px;
+                margin: 5px;
+                /* */
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding: 0px;
+            }
+            .h-divider {
+                background-color: white;
                 height: 1px;
                 width: 100%;
-                margin: 1px;
+                margin: 5px;
+                /* */
+                margin-left: 0px;
+                margin-right: 0px;
                 padding: 0px;
-                background-image: linear-gradient(90deg, transparent, white, white, transparent);
             }
-            .tiny {
-                color: white;
-                font-size: 10px;
-                font-weight: bold;
-                letter-spacing: 1.5px;
+            .v-border {
+                background-color: black;
+                height: auto;
+                width: 5px;
                 margin: 0px;
+                /* */
+                margin-left: 0px;
+                margin-right: 0px;
                 padding: 0px;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-                align-self: center;
+            }
+            .h-border {
+                background-color: black;
+                height: 5px;
+                width: auto;
+                margin: 0px;
+                /* */
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 0px;
             }
             .advertise-right img {
                 height: 100%;
@@ -111,23 +233,36 @@
     </head>
     <body>
         <div id="container">
-            <img
+            <!--img
                 id="background"
-                src="https://cdn.jsdelivr.net/gh/goofymanreal/neocities-jeremyclarkson/jpg/windowsxp.jpg" />
-            <div class="titlebar">
-                <span id="titlebartext">F MY POOR FALD EGG BOY</span>
-            </div>
-
-            <div class="window1">
-                <span class="window1text1">This is some text, lol.</span>
-                <div class="divider"></div>
-
-                <div class="divider"></div>
-                <span class="window1text1">Balls.</span>
-                <span class="tiny">tiny text.</span>
-
-                <!--div class="advertise-right"><img src="images/Sayori!.jpg"></div-->
-            </div>
+                src="https://cdn.jsdelivr.net/gh/goofymanreal/neocities-jeremyclarkson/jpg/windowsxp.jpg" /-->
+            <header id="header">
+                <h1>F MY POOR FALD EGG BOY</h1>
+            </header>
+            <!-- Window1 -->
+            <section class="window1-stack">
+                <header class="titlebar1">
+                    <small title="Sure a title.">TITLE-BAR TITLE.</small>
+                </header>
+                <section class="window1">
+                    <!-- Window1 Content -->
+                    <section class="subcontainer1">
+                        <section class="subcontainer-row">
+                            <p>Text test 1</p>
+                            <div class="v-divider"></div>
+                            <section class="subcontainer-col">
+                                <p>This is some text, <del>lol.</del></p>
+                                <div class="h-divider"></div>
+                                <p><ins>Balls.</ins></p>
+                                <small>tiny text.</small>
+                                <!--div class="advertise-right"><img src="images/Sayori!.jpg"></div-->
+                            </section>
+                        </section>
+                    </section>
+                    <!-- Window1 Content -->
+                </section>
+            </section>
+            <!-- Window1 -->
         </div>
     </body>
 </html>
